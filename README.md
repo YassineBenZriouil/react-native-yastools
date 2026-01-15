@@ -1,5 +1,8 @@
 # Yastools React Native Utils
 
+[![CI](https://github.com/YassineBenZriouil/react-native-yastools/actions/workflows/ci.yml/badge.svg)](https://github.com/YassineBenZriouil/react-native-yastools/actions/workflows/ci.yml)
+[![npm version](https://badge.fury.io/js/react-native-yastools.svg)](https://www.npmjs.com/package/react-native-yastools)
+
 A collection of reusable React Native utility components.
 
 ## Installation
@@ -122,6 +125,7 @@ const MyComponent = () => {
 | `disabledColor` | `string` | `#E5E5E5` | Custom disabled background color |
 | `debounceTime` | `number` | `1000` | Debounce time in ms to prevent multiple clicks |
 | `activeOpacity` | `number` | `0.8` | Opacity when pressing the button |
+| `testID` | `string` | `undefined` | Test ID for testing purposes |
 
 ## Theme Customization
 
@@ -139,6 +143,30 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
+## Development
+
+### Running Tests
+
+```bash
+npm test
+
+# Watch mode
+npm run test:watch
+
+# Coverage report
+npm run test:coverage
+```
+
+### Building
+
+```bash
+npm run build
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
