@@ -40,6 +40,7 @@
     "@babel/core": "^7.24.0",
     "@babel/preset-env": "^7.24.0",
     "@babel/preset-react": "^7.24.0",
+    "@babel/preset-flow": "^7.24.0",
     "@babel/preset-typescript": "^7.24.0",
     "@testing-library/react-native": "^12.4.0",
     "@types/jest": "^29.5.0",
@@ -61,11 +62,15 @@
       "json"
     ],
     "testMatch": [
-      "**/__tests__/**/*.(ts|tsx|js)",
-      "**/*.(test|spec).(ts|tsx|js)"
+      "<rootDir>/src/**/__tests__/**/*.(ts|tsx|js)",
+      "<rootDir>/src/**/*.(test|spec).(ts|tsx|js)"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|@react-native)/)"
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)/)"
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/jest.setup.js"
