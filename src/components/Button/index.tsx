@@ -16,7 +16,7 @@ import {
 import styles from './styles';
 import COLORS from '../../theme';
 
-export interface FlexineButtonProps {
+export interface YasButtonProps {
   /** Callback function when button is pressed */
   onPress: () => void;
   /** Additional styles to apply to the button container */
@@ -48,20 +48,20 @@ export interface FlexineButtonProps {
 }
 
 /**
- * FlexineButton - A customizable button component for React Native
+ * YasButton - A customizable button component for React Native
  * 
  * @example
  * ```tsx
- * import { FlexineButton } from 'flexine-react-native-utils';
+ * import { YasButton } from 'react-native-yastools';
  * 
- * <FlexineButton
+ * <YasButton
  *   text="Click Me"
  *   onPress={() => console.log('Pressed!')}
  *   primaryColor="#FF6B6B"
  * />
  * ```
  */
-const FlexineButton: React.FC<FlexineButtonProps> = ({
+const YasButton: React.FC<YasButtonProps> = ({
   onPress,
   additionalStyle,
   additonalStyle, // Support legacy prop name
@@ -122,4 +122,4 @@ const FlexineButton: React.FC<FlexineButtonProps> = ({
   );
 };
 
-export default memo(FlexineButton);
+export default memo(YasButton);

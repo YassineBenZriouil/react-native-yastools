@@ -1,5 +1,5 @@
 import { StyleProp, ViewStyle, TextStyle, ImageSourcePropType, ImageStyle } from 'react-native';
-export interface FlexineButtonProps {
+export interface YasButtonProps {
     /** Callback function when button is pressed */
     onPress: () => void;
     /** Additional styles to apply to the button container */

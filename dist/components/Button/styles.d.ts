@@ -1,5 +1,5 @@
 /**
- * Default styles for the FlexineButton component
+ * Default styles for the YasButton component
  * Uses standard React Native StyleSheet for maximum compatibility
  */
 declare const _default: {

@@ -1,13 +1,13 @@
-# Flexine React Native Utils
+# Yastools React Native Utils
 
 A collection of reusable React Native utility components.
 
 ## Installation
 
 ```bash
-npm install flexine-react-native-utils
+npm install react-native-yastools
 # or
-yarn add flexine-react-native-utils
+yarn add react-native-yastools
 ```
 
 ### Peer Dependencies
@@ -19,18 +19,18 @@ This package requires the following peer dependencies to be installed in your pr
 
 ## Components
 
-### FlexineButton
+### YasButton
 
 A customizable button component with built-in loading state, debounce functionality, and theming support.
 
 #### Basic Usage
 
 ```tsx
-import { FlexineButton } from 'flexine-react-native-utils';
+import { YasButton } from 'react-native-yastools';
 
 const MyComponent = () => {
   return (
-    <FlexineButton
+    <YasButton
       text="Click Me"
       onPress={() => console.log('Button pressed!')}
     />
@@ -41,7 +41,7 @@ const MyComponent = () => {
 #### With Loading State
 
 ```tsx
-import { FlexineButton } from 'flexine-react-native-utils';
+import { YasButton } from 'react-native-yastools';
 
 const MyComponent = () => {
   const [loading, setLoading] = useState(false);
@@ -53,7 +53,7 @@ const MyComponent = () => {
   };
 
   return (
-    <FlexineButton
+    <YasButton
       text="Submit"
       onPress={handlePress}
       fetching={loading}
@@ -66,11 +66,11 @@ const MyComponent = () => {
 #### With Custom Styling
 
 ```tsx
-import { FlexineButton } from 'flexine-react-native-utils';
+import { YasButton } from 'react-native-yastools';
 
 const MyComponent = () => {
   return (
-    <FlexineButton
+    <YasButton
       text="Custom Button"
       onPress={() => {}}
       primaryColor="#FF6B6B"
@@ -92,11 +92,11 @@ const MyComponent = () => {
 #### With Icon
 
 ```tsx
-import { FlexineButton } from 'flexine-react-native-utils';
+import { YasButton } from 'react-native-yastools';
 
 const MyComponent = () => {
   return (
-    <FlexineButton
+    <YasButton
       text="Settings"
       icon={require('./assets/settings-icon.png')}
       onPress={() => navigation.navigate('Settings')}
@@ -128,7 +128,7 @@ const MyComponent = () => {
 You can import the default theme values to use in your own components:
 
 ```tsx
-import { COLORS, FONT_SIZES, FONT_FAMILY } from 'flexine-react-native-utils';
+import { COLORS, FONT_SIZES, FONT_FAMILY } from 'react-native-yastools';
 
 const styles = StyleSheet.create({
   container: {

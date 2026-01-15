@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import COLORS, { FONT_SIZES } from '../../theme';
 /**
- * Default styles for the FlexineButton component
+ * Default styles for the YasButton component
  * Uses standard React Native StyleSheet for maximum compatibility
  */
 export default StyleSheet.create({

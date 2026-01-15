@@ -1,5 +1,5 @@
 /**
- * Default theme configuration for FlexineButton
+ * Default theme configuration for YasButton
  * Users can override these values by passing custom props
  */
 export declare const COLORS: {

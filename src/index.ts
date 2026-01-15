@@ -1,6 +1,6 @@
 // Components
-export { default as FlexineButton } from './components/Button';
-export type { FlexineButtonProps } from './components/Button';
+export { default as YasButton } from './components/Button';
+export type { YasButtonProps } from './components/Button';
 
 // Theme utilities (for customization)
 export { default as COLORS, FONT_FAMILY, FONT_SIZES } from './theme';
