@@ -8,6 +8,7 @@ export const COLORS = {
   white: '#FFFFFF',
   grayBg: '#E5E5E5',
   gray: '#666666',
+  black: '#000000',
 };
 
 export const FONT_FAMILY = {
@@ -17,6 +18,7 @@ export const FONT_FAMILY = {
 };
 
 export const FONT_SIZES = {
+  f11: 11,
   f12: 12,
   f14: 14,
   f16: 16,

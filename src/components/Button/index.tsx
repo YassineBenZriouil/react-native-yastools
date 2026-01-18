@@ -12,26 +12,29 @@ import {
 // Internal styles and theme
 import styles from './styles';
 import COLORS from '../../theme';
-import { YasButtonProps } from './type';
+import { YasButtonProps as ButtonProps } from './type';
 
-export type { YasButtonProps };
+export type { ButtonProps };
+
+// Legacy type export for backwards compatibility
+export type { YasButtonProps } from './type';
 
 
 /**
- * YasButton - A customizable button component for React Native
+ * Button - A customizable button component for React Native
  * 
  * @example
  * ```tsx
- * import { YasButton } from 'react-native-yastools';
+ * import { Button } from 'react-native-yastools';
  * 
- * <YasButton
+ * <Button
  *   text="Click Me"
  *   onPress={() => console.log('Pressed!')}
  *   primaryColor="#FF6B6B"
  * />
  * ```
  */
-const YasButton: React.FC<YasButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   onPress,
   additionalStyle,
   additonalStyle, // Support legacy prop name
@@ -93,4 +96,4 @@ const YasButton: React.FC<YasButtonProps> = ({
   );
 };
 
-export default memo(YasButton);
+export default memo(Button);
