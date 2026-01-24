@@ -1,5 +1,5 @@
 /**
- * Default theme configuration for YasButton
+ * Default theme configuration for Button
  * Users can override these values by passing custom props
  */
 

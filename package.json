@@ -1,6 +1,6 @@
 {
   "name": "react-native-yastools",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,11 +9,12 @@
     "src"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && xcopy src\\assets dist\\assets /E /I /Y",
     "prepare": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "local-publish": "npm test && npm run build && yalc publish --push"
   },
   "keywords": [
     "react-native",

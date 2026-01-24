@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import YasButton from '../index';
+import Button from '../index';
 
-describe('YasButton', () => {
+describe('Button', () => {
   it('renders correctly with text', () => {
     const { getByText } = render(
-      <YasButton text="Press Me" onPress={() => {}} />
+      <Button text="Press Me" onPress={() => {}} />
     );
     expect(getByText('Press Me')).toBeTruthy();
   });
@@ -13,7 +13,7 @@ describe('YasButton', () => {
   it('calls onPress when pressed', () => {
     const onPressMock = jest.fn();
     const { getByText } = render(
-      <YasButton text="Press Me" onPress={onPressMock} />
+      <Button text="Press Me" onPress={onPressMock} />
     );
 
     fireEvent.press(getByText('Press Me'));
@@ -23,7 +23,7 @@ describe('YasButton', () => {
   it('does not call onPress when disabled', () => {
     const onPressMock = jest.fn();
     const { getByText } = render(
-      <YasButton text="Press Me" onPress={onPressMock} disabled />
+      <Button text="Press Me" onPress={onPressMock} disabled />
     );
 
     fireEvent.press(getByText('Press Me'));
@@ -32,7 +32,7 @@ describe('YasButton', () => {
 
   it('shows loading indicator when fetching', () => {
     const { queryByText, getByTestId } = render(
-      <YasButton text="Press Me" onPress={() => {}} fetching testID="button" />
+      <Button text="Press Me" onPress={() => {}} fetching testID="button" />
     );
 
     expect(queryByText('Press Me')).toBeNull();
@@ -42,7 +42,7 @@ describe('YasButton', () => {
     jest.useFakeTimers();
     const onPressMock = jest.fn();
     const { getByText } = render(
-      <YasButton text="Press Me" onPress={onPressMock} debounceTime={1000} />
+      <Button text="Press Me" onPress={onPressMock} debounceTime={1000} />
     );
 
     const button = getByText('Press Me');
@@ -62,7 +62,7 @@ describe('YasButton', () => {
 
   it('applies custom primary color', () => {
     const { getByTestId } = render(
-      <YasButton
+      <Button
         text="Press Me"
         onPress={() => {}}
         primaryColor="#FF0000"
@@ -80,7 +80,7 @@ describe('YasButton', () => {
   it('renders without text when only icon is provided', () => {
     const mockIcon = { uri: 'https://example.com/icon.png' };
     const { queryByText } = render(
-      <YasButton onPress={() => {}} icon={mockIcon} />
+      <Button onPress={() => {}} icon={mockIcon} />
     );
 
     expect(queryByText('Press Me')).toBeNull();

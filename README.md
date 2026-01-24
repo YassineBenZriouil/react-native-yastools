@@ -1,11 +1,17 @@
-# Yastools React Native Utils
+# 🚀 React Native Yastools
 
-[![CI](https://github.com/YassineBenZriouil/react-native-yastools/actions/workflows/ci.yml/badge.svg)](https://github.com/YassineBenZriouil/react-native-yastools/actions/workflows/ci.yml)
-[![npm version](https://badge.fury.io/js/react-native-yastools.svg)](https://www.npmjs.com/package/react-native-yastools)
+A collection of **premium, high-performance** UI components and utilities for React Native. Built for speed, aesthetics, and developer experience.
 
-A collection of reusable React Native utility components.
+## ✨ Features
 
-## Installation
+*   **🎨  Themable:** Fully customizable design system.
+*   **⚡  Performant:** Optimized for high frame rates and smooth interactions.
+*   **📱  Native Feel:** Haptic feedback and native animations baked in.
+*   **🔌  Plug & Play:** Zero-config components ready to drop into your app.
+
+---
+
+## 📦 Installation
 
 ```bash
 npm install react-native-yastools
@@ -13,161 +19,70 @@ npm install react-native-yastools
 yarn add react-native-yastools
 ```
 
-### Peer Dependencies
+> **Note:** Ensure you have `react-native-reanimated` installed if you plan to use advanced animations.
 
-This package requires the following peer dependencies to be installed in your project:
+---
 
-- `react` >= 17.0.0
-- `react-native` >= 0.64.0
+## 🛠️ Components
 
-## Components
-
-### YasButton
-
-A customizable button component with built-in loading state, debounce functionality, and theming support.
-
-#### Basic Usage
+### 🟢 Button
+A highly versatile button with built-in loading states, scaling animations, and debounce protection.
 
 ```tsx
-import { YasButton } from 'react-native-yastools';
+import { Button } from 'react-native-yastools';
 
-const MyComponent = () => {
-  return (
-    <YasButton
-      text="Click Me"
-      onPress={() => console.log('Button pressed!')}
-    />
-  );
-};
+<Button 
+  text="Confirm Order"
+  onPress={handleCheckout}
+  primaryColor="#007AFF"
+  animateScale={0.95} // 🪄 Smooth press animation
+  debounceTime={500}  // 🛡️ Prevents double-taps
+  fetching={isLoading}
+/>
 ```
 
-#### With Loading State
+### 💬 ConfirmationPopUp (Modal)
+A beautiful, promise-based confirmation dialog.
 
 ```tsx
-import { YasButton } from 'react-native-yastools';
+import { ConfirmationPopUp } from 'react-native-yastools';
 
-const MyComponent = () => {
-  const [loading, setLoading] = useState(false);
-
-  const handlePress = async () => {
-    setLoading(true);
-    await someAsyncOperation();
-    setLoading(false);
-  };
-
-  return (
-    <YasButton
-      text="Submit"
-      onPress={handlePress}
-      fetching={loading}
-      loaderColor="#FFFFFF"
-    />
-  );
-};
+<ConfirmationPopUp
+  visible={isVisible}
+  title="Delete Account?"
+  message="This action cannot be undone."
+  onConfirm={deleteUser}
+  onClose={() => setVisible(false)}
+  confirmText="Delete"
+  cancelText="Keep"
+  loading={isDeleting}
+/>
 ```
 
-#### With Custom Styling
+---
+
+## 🎨 Theme & Utils
+
+The library exposes its core theme and interaction helpers:
 
 ```tsx
-import { YasButton } from 'react-native-yastools';
+import { COLORS, preventMultiPress } from 'react-native-yastools';
 
-const MyComponent = () => {
-  return (
-    <YasButton
-      text="Custom Button"
-      onPress={() => {}}
-      primaryColor="#FF6B6B"
-      disabledColor="#CCCCCC"
-      additionalStyle={{
-        width: 200,
-        height: 60,
-        borderRadius: 30,
-      }}
-      textStyle={{
-        fontSize: 18,
-        fontWeight: 'bold',
-      }}
-    />
-  );
-};
+// Use standard colors
+const myStyle = { color: COLORS.primary };
+
+// Wrap your own handlers
+const safeHandler = preventMultiPress(() => console.log('Safe!'), 1000);
 ```
 
-#### With Icon
+---
 
-```tsx
-import { YasButton } from 'react-native-yastools';
+## 🤝 Contributing
 
-const MyComponent = () => {
-  return (
-    <YasButton
-      text="Settings"
-      icon={require('./assets/settings-icon.png')}
-      onPress={() => navigation.navigate('Settings')}
-    />
-  );
-};
-```
+1.  Clone the repo
+2.  Run `npm install`
+3.  Test changes with `npm run local-publish`
 
-#### Props
+---
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `onPress` | `() => void` | **Required** | Callback function when button is pressed |
-| `text` | `string` | `undefined` | Text to display on the button |
-| `icon` | `ImageSourcePropType` | `undefined` | Icon to display on the button |
-| `disabled` | `boolean` | `false` | Whether the button is disabled |
-| `fetching` | `boolean` | `false` | Whether to show loading indicator |
-| `additionalStyle` | `StyleProp<ViewStyle>` | `undefined` | Additional styles for the button container |
-| `textStyle` | `StyleProp<TextStyle>` | `undefined` | Custom styles for the button text |
-| `iconStyle` | `StyleProp<ImageStyle>` | `undefined` | Custom styles for the icon |
-| `loaderColor` | `string` | Theme primary | Color of the loading indicator |
-| `primaryColor` | `string` | `#007AFF` | Custom primary/background color |
-| `disabledColor` | `string` | `#E5E5E5` | Custom disabled background color |
-| `debounceTime` | `number` | `1000` | Debounce time in ms to prevent multiple clicks |
-| `activeOpacity` | `number` | `0.8` | Opacity when pressing the button |
-| `testID` | `string` | `undefined` | Test ID for testing purposes |
-
-## Theme Customization
-
-You can import the default theme values to use in your own components:
-
-```tsx
-import { COLORS, FONT_SIZES, FONT_FAMILY } from 'react-native-yastools';
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: COLORS.primary,
-  },
-  text: {
-    fontSize: FONT_SIZES.f16,
-  },
-});
-```
-
-## Development
-
-### Running Tests
-
-```bash
-npm test
-
-# Watch mode
-npm run test:watch
-
-# Coverage report
-npm run test:coverage
-```
-
-### Building
-
-```bash
-npm run build
-```
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-ISC
+Built with ❤️ by **Yassine Ben Zriouil**.

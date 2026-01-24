@@ -6,13 +6,11 @@ import {
   ImageStyle,
 } from "react-native";
 
-export interface YasButtonProps {
+export interface ButtonProps {
   /** Callback function when button is pressed */
   onPress: () => void;
   /** Additional styles to apply to the button container */
   additionalStyle?: StyleProp<ViewStyle>;
-  /** @deprecated Use additionalStyle instead */
-  additonalStyle?: StyleProp<ViewStyle>;
   /** Whether the button is disabled */
   disabled?: boolean;
   /** Whether to show loading indicator */
@@ -37,4 +35,10 @@ export interface YasButtonProps {
   activeOpacity?: number;
   /** Test ID for testing purposes */
   testID?: string;
+  /**
+   * Scale value to animate to when pressed (0 to 1).
+   * If undefined, no scaling animation occurs.
+   * @example 0.95
+   */
+  animateScale?: number;
 }
