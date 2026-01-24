@@ -9,7 +9,7 @@
     "src"
   ],
   "scripts": {
-    "build": "tsc && xcopy src\\assets dist\\assets /E /I /Y",
+    "build": "tsc && copyfiles -u 1 \"src/assets/**/*\" dist",
     "prepare": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch",
