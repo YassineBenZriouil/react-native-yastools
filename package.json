@@ -25,6 +25,11 @@
   "author": "",
   "license": "ISC",
   "description": "React Native Utility Files and Utility Components ",
+    "homepage": "https://ybz.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YassineBenZriouil/react-native-yastools"
+  },
   "peerDependencies": {
     "react": ">=17.0.0",
     "react-native": ">=0.64.0"
