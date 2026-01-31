@@ -2,10 +2,6 @@
 
 A collection of **premium, high-performance** UI components and utilities for React Native. Built for speed, aesthetics, and developer experience.
 
-# ✍🏼 Author
-
-Built with 💜 by **Yassine Ben Zriouil**.
-
 ## ✨ Features
 
 *   **🎨  Themable:** Fully customizable design system.
@@ -80,6 +76,9 @@ const safeHandler = preventMultiPress(() => console.log('Safe!'), 1000);
 ```
 
 ---
+
+Built with 💜 by **Yassine Ben Zriouil**.
+
 
 ## 🤝 Contributing
 
