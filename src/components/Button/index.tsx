@@ -14,7 +14,7 @@ import {
 import styles from './styles';
 import COLORS from '../../theme';
 import { ButtonProps } from './type';
-import { preventMultiPress, usePressScale } from '../../interactions';
+import { preventMultiPress, usePressScale } from '../../utils/interactions';
 
 export type { ButtonProps };
 
@@ -79,7 +79,7 @@ const Button: React.FC<ButtonProps> = ({
     !disabled && primaryColor && { backgroundColor: primaryColor },
     disabled && disabledColor && { backgroundColor: disabledColor },
     // Support both prop names for backwards compatibility
-    additionalStyle 
+    additionalStyle
   ];
 
   // Combine animated style
@@ -92,7 +92,7 @@ const Button: React.FC<ButtonProps> = ({
       onPressOut={isAnimated ? handlePressOut : undefined}
       activeOpacity={activeOpacity}
       disabled={disabled || fetching}
-      style={[animatedStyle]} 
+      style={[animatedStyle]}
     >
       <View style={containerStyle} testID={testID}>
         {fetching ? (
