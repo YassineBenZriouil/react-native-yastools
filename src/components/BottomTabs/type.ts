@@ -58,4 +58,17 @@ export interface BottomTabsProps {
   activeOpacity?: number;
   /** Test ID for testing purposes */
   testID?: string;
+  /**
+   * Optional: Scale factor for active tab
+   * - If true: defaults to 1.3
+   * - If number: uses the provided number
+   * - If undefined: no scaling (1.0)
+   */
+  activeScale?: number | boolean;
+  /** Optional: Control global label visibility (default: true) */
+  showLabel?: boolean;
+  /** Optional: Specifically control label visibility for active tab */
+  activeShowLabel?: boolean;
+  /** Optional: Specifically control label visibility for inactive tabs */
+  inactiveShowLabel?: boolean;
 }

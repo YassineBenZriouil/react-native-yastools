@@ -11,6 +11,8 @@ export type { ConfirmationPopUpProps } from './components/ConfirmationPopUp';
 export { default as CheckBox } from './components/CheckBox';
 export type { CheckBoxProps } from './components/CheckBox/type';
 
+export { default as MediaView } from './components/MediaView';
+
 
 // Theme utilities (for customization)
 export { default as COLORS, FONT_FAMILY, FONT_SIZES } from './theme';

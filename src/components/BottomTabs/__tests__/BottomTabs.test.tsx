@@ -17,6 +17,14 @@ const sampleTabs: TabItem[] = [
 ];
 
 describe('BottomTabs', () => {
+  beforeAll(() => {
+    jest.useFakeTimers();
+  });
+
+  afterAll(() => {
+    jest.useRealTimers();
+  });
+
   beforeEach(() => {
     jest.clearAllMocks();
   });

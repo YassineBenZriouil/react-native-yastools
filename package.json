@@ -1,6 +1,6 @@
 {
   "name": "react-native-yastools",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -28,6 +28,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/YassineBenZriouil/react-native-yastools"
+  },
+  "dependencies": {
+    "react-native-video": ">=5.0.0",
+    "@dudigital/react-native-zoomable-view": ">=1.0.0"
   },
   "peerDependencies": {
     "react": ">=17.0.0",
@@ -81,6 +85,11 @@
     "setupFilesAfterEnv": [
       "<rootDir>/jest.setup.js"
     ],
+    "moduleNameMapper": {
+      "^react-native-video$": "<rootDir>/src/__mocks__/react-native-video.js",
+      "^react-native-safe-area-context$": "<rootDir>/src/__mocks__/react-native-safe-area-context.js",
+      "^@dudigital/react-native-zoomable-view$": "<rootDir>/src/__mocks__/react-native-zoomable-view.js"
+    },
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",
       "!src/**/*.d.ts"
