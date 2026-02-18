@@ -33,6 +33,7 @@
     "url": "https://github.com/YassineBenZriouil/react-native-yastools"
   },
   "workspaces": [
+    "src/core",
     "src/packages/*"
   ],
   "exports": {
