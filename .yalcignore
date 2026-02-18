@@ -1,0 +1,9 @@
+**/__tests__
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+jest.setup.js
+tsconfig.json
+.agent/
+.gemini/

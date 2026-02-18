@@ -12,9 +12,9 @@ import {
 
 // Internal styles and theme
 import styles from './styles';
-import COLORS from '../../theme';
+import COLORS from '@react-native-yastools/core/theme';
 import { ButtonProps } from './type';
-import { preventMultiPress, usePressScale } from '../../utils/interactions';
+import { preventMultiPress, usePressScale } from '@react-native-yastools/core/utils/interactions';
 
 export type { ButtonProps };
 
@@ -76,10 +76,10 @@ const Button: React.FC<ButtonProps> = ({
   const containerStyle: StyleProp<ViewStyle> = [
     disabled ? styles.disabled : styles.container,
     // Apply custom colors if provided
-    !disabled && primaryColor && { backgroundColor: primaryColor },
-    disabled && disabledColor && { backgroundColor: disabledColor },
+    !disabled && primaryColor ? { backgroundColor: primaryColor } : undefined,
+    disabled && disabledColor ? { backgroundColor: disabledColor } : undefined,
     // Support both prop names for backwards compatibility
-    additionalStyle
+    additionalStyle || undefined
   ];
 
   // Combine animated style

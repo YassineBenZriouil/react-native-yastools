@@ -1,4 +1,4 @@
-import COLORS from '../../theme';
+import COLORS from '@react-native-yastools/core/theme';
 import { Dimensions, StyleSheet } from 'react-native';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');

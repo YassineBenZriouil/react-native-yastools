@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useRef, useEffect } from 'react';
 import { TouchableOpacity, Image, View, Text, Animated } from 'react-native';
 import styles from './styles';
-import { COLORS } from '../../theme';
+import { COLORS } from '@react-native-yastools/core/theme';
 import { BottomTabsProps, TabItem } from './type';
 
 export type { BottomTabsProps, TabItem };

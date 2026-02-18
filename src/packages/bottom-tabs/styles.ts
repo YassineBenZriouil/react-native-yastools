@@ -1,5 +1,5 @@
 import { StyleSheet, Platform } from 'react-native';
-import COLORS, { FONT_SIZES, FONT_FAMILY } from '../../theme';
+import COLORS, { FONT_SIZES, FONT_FAMILY } from '@react-native-yastools/core/theme';
 
 /**
  * Default styles for the BottomTabs component

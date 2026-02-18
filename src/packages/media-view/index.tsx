@@ -74,7 +74,7 @@ const MediaView: React.FC<MediaViewProps> = ({
                     activeOpacity={0.7}
                 >
                     <Image
-                        source={closeIcon || require('../../assets/imgs/close.png')}
+                        source={closeIcon || require('@react-native-yastools/core/assets/imgs/close.png')}
                         style={[styles.closeIcon, closeIconStyle]}
                         resizeMode="contain"
                     />

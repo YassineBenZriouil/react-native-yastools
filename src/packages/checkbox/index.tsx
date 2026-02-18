@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 import { TouchableOpacity, Image, View, Text, ViewStyle } from 'react-native';
 import styles from './styles';
-import CheckIcon from '../../assets/imgs/whiteCheck.png';
-import COLORS from '../../theme';
+import CheckIcon from '@react-native-yastools/core/assets/imgs/whiteCheck.png';
+import COLORS from '@react-native-yastools/core/theme';
 import { CheckBoxProps } from './type';
 
 /**
@@ -29,10 +29,10 @@ const CheckBox: React.FC<CheckBoxProps> = ({
 
   const boxStyles: ViewStyle[] = [
     styles.box,
-    !checked && { borderColor: inactiveColor },
-    checked && styles.checkedBox,
-    checked && { backgroundColor: activeColor, borderColor: activeColor },
-    disabled && styles.disabledBox,
+    !checked ? { borderColor: inactiveColor } : undefined,
+    checked ? styles.checkedBox : undefined,
+    checked ? { backgroundColor: activeColor, borderColor: activeColor } : undefined,
+    disabled ? styles.disabledBox : undefined,
     boxStyle as ViewStyle,
   ];
 

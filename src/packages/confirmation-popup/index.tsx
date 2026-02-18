@@ -8,8 +8,8 @@ import {
     Image,
 } from 'react-native';
 import styles from './styles';
-import Button from '../Button';
-import closeIcon from '../../assets/imgs/close.png';
+import Button from '../button';
+import closeIcon from '@react-native-yastools/core/assets/imgs/close.png';
 
 export interface ConfirmationPopUpProps {
     visible: boolean;

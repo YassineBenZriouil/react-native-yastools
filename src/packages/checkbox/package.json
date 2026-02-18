@@ -1,0 +1,21 @@
+{
+    "name": "@react-native-yastools/checkbox",
+    "version": "1.0.5",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "license": "ISC",
+    "files": [
+        "index.tsx",
+        "styles.ts",
+        "type.ts",
+        "dist"
+    ],
+    "dependencies": {
+        "@react-native-yastools/core": "1.0.5"
+    },
+    "peerDependencies": {
+        "react": ">=17.0.0",
+        "react-native": ">=0.64.0"
+    }
+}

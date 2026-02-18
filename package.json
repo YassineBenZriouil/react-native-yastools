@@ -6,7 +6,8 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "!**/dist/**"
   ],
   "scripts": {
     "build": "tsc && copyfiles -u 1 \"src/assets/**/*\" dist",
@@ -14,7 +15,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "local-publish": "npm test && npm run build && yalc publish --push"
+    "publish": "node scripts/publish-all.js",
+    "publish-all": "npm test && npm run build && yalc publish --push && npm run publish",
+    "publish-one": "node scripts/publish-one.js"
   },
   "keywords": [
     "react-native",
@@ -29,9 +32,42 @@
     "type": "git",
     "url": "https://github.com/YassineBenZriouil/react-native-yastools"
   },
+  "workspaces": [
+    "src/packages/*"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./MediaView": {
+      "types": "./dist/packages/media-view/index.d.ts",
+      "import": "./dist/packages/media-view/index.js"
+    },
+    "./Button": {
+      "types": "./dist/packages/button/index.d.ts",
+      "import": "./dist/packages/button/index.js"
+    },
+    "./ConfirmationPopUp": {
+      "types": "./dist/packages/confirmation-popup/index.d.ts",
+      "import": "./dist/packages/confirmation-popup/index.js"
+    },
+    "./CheckBox": {
+      "types": "./dist/packages/checkbox/index.d.ts",
+      "import": "./dist/packages/checkbox/index.js"
+    },
+    "./BottomTabs": {
+      "types": "./dist/packages/bottom-tabs/index.d.ts",
+      "import": "./dist/packages/bottom-tabs/index.js"
+    }
+  },
   "dependencies": {
-    "react-native-video": ">=5.0.0",
-    "@dudigital/react-native-zoomable-view": ">=1.0.0"
+    "@react-native-yastools/core": "1.0.5",
+    "@react-native-yastools/button": "1.0.5",
+    "@react-native-yastools/bottom-tabs": "1.0.5",
+    "@react-native-yastools/checkbox": "1.0.5",
+    "@react-native-yastools/confirmation-popup": "1.0.5",
+    "@react-native-yastools/media-view": "1.0.5"
   },
   "peerDependencies": {
     "react": ">=17.0.0",
@@ -73,7 +109,9 @@
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.(ts|tsx|js)",
-      "<rootDir>/src/**/*.(test|spec).(ts|tsx|js)"
+      "<rootDir>/src/**/*.(test|spec).(ts|tsx|js)",
+      "<rootDir>/packages/**/__tests__/**/*.(ts|tsx|js)",
+      "<rootDir>/packages/**/*.(test|spec).(ts|tsx|js)"
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
@@ -88,7 +126,8 @@
     "moduleNameMapper": {
       "^react-native-video$": "<rootDir>/src/__mocks__/react-native-video.js",
       "^react-native-safe-area-context$": "<rootDir>/src/__mocks__/react-native-safe-area-context.js",
-      "^@dudigital/react-native-zoomable-view$": "<rootDir>/src/__mocks__/react-native-zoomable-view.js"
+      "^@dudigital/react-native-zoomable-view$": "<rootDir>/src/__mocks__/react-native-zoomable-view.js",
+      "^@react-native-yastools/core(.*)$": "<rootDir>/src/core$1"
     },
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}",

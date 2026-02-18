@@ -19,11 +19,37 @@ npm install react-native-yastools
 yarn add react-native-yastools
 ```
 
-> **Note:** Ensure you have `react-native-reanimated` installed if you plan to use advanced animations.
+### Sub-path Imports (Recommended)
+You can import components individually to reduce bundle size and avoid installing unnecessary dependencies:
+
+```tsx
+import MediaView from 'react-native-yastools/MediaView';
+import Button from 'react-native-yastools/Button';
+```
+
+> **Note:** This package uses a modular structure. When using sub-path imports, you only pull in the dependencies required for that specific component. For example, `MediaView` requires `react-native-video`, but `Button` does not. 
+> 
+> For `MediaView`, you may still need to run `npx pod-install` (iOS) and rebuild your project to link the native modules.
 
 ---
 
 ## Components
+
+### MediaView
+A premium modal component for previewing images and videos with support for zooming and custom transitions.
+
+```tsx
+import { MediaView } from 'react-native-yastools';
+
+<MediaView
+  visible={isOpen}
+  source={{ uri: 'https://example.com/image.jpg' }}
+  type="image"
+  onClose={() => setIsOpen(false)}
+  zoomableImage={true} // Enable pinch-to-zoom
+  exitOnBackDropClick={true}
+/>
+```
 
 ### Button
 A highly versatile button with built-in loading states, scaling animations, and debounce protection.

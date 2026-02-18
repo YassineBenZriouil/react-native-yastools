@@ -1,21 +1,6 @@
-// Components
-export { default as Button } from './components/Button/index';
-export type { ButtonProps } from './components/Button';
-
-export { default as BottomTabs } from './components/BottomTabs';
-export type { BottomTabsProps, TabItem } from './components/BottomTabs';
-
-export { default as ConfirmationPopUp } from './components/ConfirmationPopUp';
-export type { ConfirmationPopUpProps } from './components/ConfirmationPopUp';
-
-export { default as CheckBox } from './components/CheckBox';
-export type { CheckBoxProps } from './components/CheckBox/type';
-
-export { default as MediaView } from './components/MediaView';
-
-
-// Theme utilities (for customization)
-export { default as COLORS, FONT_FAMILY, FONT_SIZES } from './theme';
-
-// Utils
-export * from './utils/interactions';
+export { default as Button } from './packages/button';
+export { default as MediaView } from './packages/media-view';
+export { default as ConfirmationPopUp } from './packages/confirmation-popup';
+export { default as CheckBox } from './packages/checkbox';
+export { default as BottomTabs } from './packages/bottom-tabs';
+export * from './core';
